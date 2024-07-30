@@ -9,16 +9,21 @@ public:
     string name;
     string dept;
     string subject;
-    //non-parameterized constructor
-    Teacher(){
-        dept = "Computer Science and Engineering";
-    };
-    //copy constructor
+
+    //parameterized constructor
     Teacher(string name, string dept, string subject, double salary){
         this->name = name;
         this->dept = dept;
         this->subject = subject;
         this->salary = salary;
+    };
+    //copy constructor
+    Teacher(Teacher &orgObj){
+        cout<<"I am copy constructor"<<endl;
+        this->name = orgObj.name;
+        this->dept = orgObj.dept;
+        this->subject = orgObj.subject;
+        this->salary = orgObj.salary;
     };
 
     // methods  //member function
