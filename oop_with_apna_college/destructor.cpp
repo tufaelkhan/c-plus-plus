@@ -10,13 +10,11 @@ class Student{
         cgpaPtr = new double;
         *cgpaPtr = cgpa;
     }
-    Student(Student &obj){
-        this->name = obj.name;
-        cgpaPtr = new double;
-        *cgpaPtr = *obj.cgpaPtr;
-    }
     // destructor
-    
+    ~Student(){
+        cout<<"I, Delete everything from memory";
+        delete cgpaPtr;
+    }
     void getInfo(){
         cout<<"Name : "<<name<<endl;
         cout<<"CGPA : "<<*cgpaPtr<<endl;
@@ -26,10 +24,5 @@ class Student{
 int main(){
     Student s1("Tufael Khan", 3.80);
     s1.getInfo();
-    Student s2(s1);
-    *s2.cgpaPtr = 4.00;
-    s2.name = "Sujoy Kumar";
-    s1.getInfo();
-    s2.getInfo();
     return 0;
 }
